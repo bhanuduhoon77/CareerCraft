@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-rom passlib.context import CryptContext
+from passlib.context import CryptContext
 from jose import jwt, JWTError
 from datetime import datetime, timedelta
 
