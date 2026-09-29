@@ -1,4 +1,8 @@
-from passlib.context import CryptContext
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+rom passlib.context import CryptContext
 from jose import jwt, JWTError
 from datetime import datetime, timedelta
 
@@ -10,7 +14,7 @@ from backend.models.user import User
 from sqlalchemy.orm import Session
 
 
-SECRET_KEY = "careercraft-secret-key-change-later"
+SECRET_KEY = os.getenv("SECRET_KEY", "dev-only-secret-change-me")
 ALGORITHM = "HS256"
 
 pwd_context = CryptContext(
